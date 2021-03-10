@@ -1,0 +1,162 @@
+body{
+width: 100vw;
+height: 100vh;
+margin: 0;
+padding: 0;
+font-family: 'Franklin Gothic ', 'Arial Narrow', Arial, sans-serif;
+}
+li{
+    list-style-type: none; 
+   }
+ul{
+    margin-left: 0;
+    padding-left: 0;
+   }
+
+button:focus {
+/* outline: none; */
+
+}
+.RefreshButton{
+    height:50px;
+}
+.RefreshButtonTitle{
+font-size: 13px;
+margin-right: 10px;
+margin-left: 10px;
+}
+
+.page-wrap {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 680px;
+
+}
+.head{
+margin-top: 15px;
+width: 80%;
+height: 45px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+}
+
+button{
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+}
+
+.MainContainer{
+width: 680px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+.Column{
+width: 320;
+}
+.BlockTitle{
+margin-top: 15px;
+width: 320px;
+position: relative;
+}
+
+.InfoLine{
+width: 100%;
+height: 30px;
+background-color: rgb(160, 159, 159);
+border-radius:5px;
+margin-bottom: 5px;
+
+}
+.InfoLineText{
+position: absolute;
+left: 18px;
+width: 90%;
+font-size: 15px;
+display: flex;
+justify-content: space-between;
+text-align:center;
+color: white;
+}
+
+.Favorites{
+width: 100%;
+height: 52px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+
+
+}
+
+.BlockHeader{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.BlockWeather{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width:320px){
+body{
+    overflow-x: hidden;
+}
+h2{
+    margin-bottom: 0px;
+}
+.head{
+    flex-direction: column;
+        width: 300px;
+        font-size: 15px;      
+        height: 90px;  
+}
+.RefreshButton{
+margin:auto;
+height:40px;
+width: 95%;
+}
+.MainContainer{
+flex-direction: column;
+width: 100%;
+}
+.Column{
+width: 300px;
+}
+.Favorites{
+width: 100%;
+height:75px;
+font-size: 15px;
+flex-direction: column;
+
+}
+.Search{
+    height: 40px;
+}
+.page-wrap {
+        max-width: 320px;
+    
+}
+.BlockTitle{
+    width: 300px;
+    }
+.InfoLineText{
+    left: 5px;
+    width: 96%;
+    }
+
+
+
+}
+
