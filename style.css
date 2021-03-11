@@ -1,162 +1,154 @@
 body{
-width: 100vw;
-height: 100vh;
-margin: 0;
-padding: 0;
-font-family: 'Franklin Gothic ', 'Arial Narrow', Arial, sans-serif;
+    width: 100vw; 
+    height: 100vh;
+    font-family: 'Franklin Gothic ', 'Arial Narrow', Arial, sans-serif;
+    overflow-x: hidden;
+
 }
-li{
-    list-style-type: none; 
-   }
-ul{
-    margin-left: 0;
-    padding-left: 0;
-   }
-
 button:focus {
-/* outline: none; */
+outline: none;
+}       
+li{
+list-style-type: none; 
+}
+ul{
+margin-top: 2%;
+margin-left: 0;
+padding-left: 0;
+width: 100%;
+}
+input{
+position: relative;
+height: 100%;
+background-color:rgb(220, 220, 220);
+border: none;
+padding-left: 30px;
+padding-right: 10px;
+height: 50px;
+}
 
+.wrapper{
+padding-right: 4%;
+display: grid;
+grid-column-gap: 30px;
+grid-row-gap:10px; 
+}
+.Head{
+width: 100%;
+display: grid;
+grid-template-columns: 50% 30% 20%;
+}
+.RefreshImage{
+height: 0;
+width: 0;
+display: none;
+}
+.Main{
+display: grid;
+grid-template-columns: 48% 48% ;
+grid-column-gap: 4%;
 }
 .RefreshButton{
-    height:50px;
-}
-.RefreshButtonTitle{
-font-size: 13px;
-margin-right: 10px;
-margin-left: 10px;
-}
-
-.page-wrap {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 680px;
-
-}
-.head{
-margin-top: 15px;
-width: 80%;
-height: 45px;
+height: 50px;
+width: 155px;
 display: flex;
-flex-direction: row;
-justify-content: space-between;
-
-}
-
-button{
-    padding: 0;
-    border: none;
-    border-radius: 6px;
-}
-
-.MainContainer{
-width: 680px;
-display: flex;
-flex-direction: row;
+align-items: center;
 justify-content: space-between;
 }
-
-.Column{
-width: 320;
-}
-.BlockTitle{
-margin-top: 15px;
-width: 320px;
-position: relative;
-}
-
-.InfoLine{
-width: 100%;
-height: 30px;
+.InfoLine{   
+padding-top: 0.5%;
+padding-bottom: 0.5%;
 background-color: rgb(160, 159, 159);
 border-radius:5px;
 margin-bottom: 5px;
-
-}
-.InfoLineText{
-position: absolute;
-left: 18px;
-width: 90%;
-font-size: 15px;
-display: flex;
-justify-content: space-between;
-text-align:center;
-color: white;
-}
-
-.Favorites{
-width: 100%;
-height: 52px;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-
-
-
+align-items: center;
+font-size: 15px;
+color: white;
 }
-
-.BlockHeader{
-    width: 100%;
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.InfoLineText{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 95%;
+margin: auto;
+}
+.Favorites{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+.Search{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+.All{
+display: grid;
+grid-template-columns: 48% 48% ;
+grid-column-gap: 4%;
+}
+.InfoBlock{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
 }
 .BlockWeather{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+@media screen and (max-width:653px){ 
+.Head{
+width: 95%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center; 
 }
 
-
-@media screen and (max-width:320px){
-body{
-    overflow-x: hidden;
+.Main{
+ grid-template-columns: 95%;
 }
-h2{
-    margin-bottom: 0px;
-}
-.head{
-    flex-direction: column;
-        width: 300px;
-        font-size: 15px;      
-        height: 90px;  
-}
-.RefreshButton{
-margin:auto;
-height:40px;
+.Favorites{
 width: 95%;
 }
-.MainContainer{
-flex-direction: column;
-width: 100%;
+.All{
+grid-template-columns: 95%;
 }
-.Column{
-width: 300px;
+}
+@media screen and (max-width:363px){
+body{
+ overflow-x: visible;
+}
+.wrapper{
+ width: 95%; 
+}
+.RefreshImage{
+    height: 100px;
+    width: 100px;
+    display: inline;
+    }
+.RefreshButton{
+width:60px;
+font-size: none;
+}
+.RefreshButtonTitle{
+opacity: 0%;
 }
 .Favorites{
 width: 100%;
-height:75px;
-font-size: 15px;
+display: flex;
 flex-direction: column;
-
+justify-content: space-between;
+align-items: flex-start;
 }
-.Search{
-    height: 40px;
-}
-.page-wrap {
-        max-width: 320px;
-    
-}
-.BlockTitle{
-    width: 300px;
-    }
-.InfoLineText{
-    left: 5px;
-    width: 96%;
-    }
-
-
-
 }
 
+                        
