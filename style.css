@@ -1,166 +1,217 @@
-body{
-    font-family: 'Franklin Gothic ', 'Arial Narrow', Arial, sans-serif;
-}
-button:focus {
-outline: none;
-}       
-li{
-list-style-type: none; 
-}
-ul{
-margin-top: 2%;
-margin-left: 0;
-padding-left: 0;
-width: 100%;
-}
-input{
-position: relative;
-height: 100%;
-background-color:rgb(220, 220, 220);
-border: none;
-padding-left: 30px;
-padding-right: 10px;
-height: 50px;
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 800px;
+    margin: auto;
 }
 
-.wrapper{
-display: grid;
-grid-column-gap: 30px;
-grid-row-gap:10px;
-max-width: 100%;
+button:focus {
+    outline: none;
 }
-.MainRoot{
-    display: flex;
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    margin-top: 2%;
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+}
+
+input {
+    position: relative;
+    height: 100%;
+    background-color: rgb(220, 220, 220);
+    border: none;
+    padding-left: 30px;
+    padding-right: 10px;
+    height: 50px;
+}
+
+main {
+    display: column;
     justify-content: center;
+    align-content: center;
+}
+
+.main-root {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 2%;
+}
+
+header {
     width: 100%;
+    display: grid;
+    grid-template-columns: 43% 25% 33%;
 }
-.Head{
-width: 100%;
-display: grid;
-grid-template-columns: 50% 30% 20%;
+
+.refresh-image {
+    height: 0;
+    width: 0;
+    display: none;
 }
-.RefreshImage{
-height: 0;
-width: 0;
-display: none;
-}
-.Main{
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-column-gap: 4%;
-}
-.RefreshButton{
-height: 50px;
-width: 155px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-}
-.InfoLine{   
-padding-top: 0.5%;
-padding-bottom: 0.5%;
-background-color: rgb(160, 159, 159);
-border-radius:5px;
-margin-bottom: 5px;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-font-size: 15px;
-color: white;
-padding: 8px 10px;
-}
-.InfoLineText{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-width: 100%;
-margin: auto;
-}
-.Favorites{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-}
-.Search{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-}
-.Search button{
-margin-left: 5px;
-}
-.All{
-display: grid;
-grid-template-columns: 48% 48% ;
-grid-column-gap: 4%;
-}
-.InfoBlock{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-}
-.BlockWeather{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-}
-@media screen and (max-width:653px){ 
-.Head{
-width: 100%;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center; 
-}
-.wrapper
-{
+
+.petersburg {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
-.MainRoot{
-    width: 100%;
+
+.refresh-button {
+    height: 50px;
+    width: 155px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.Main{
- grid-template-columns: 100%;
+
+.info-line {
+    background-color: rgb(160, 159, 159);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    color: white;
+    padding: 8px 10px;
 }
-.Favorites{
-width: 100%;
+
+.favorites {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
-.All{
-grid-template-columns: 100%;
+
+.searching {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.search-button {
+    margin-left: 5px;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(160, 159, 159);
+    border-radius: 100%;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
 }
-@media screen and (max-width:369px){
-.wrapper{
- width: 100%; 
+
+.all {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-column-gap: 4%;
 }
-.RefreshImage{
-height: 100px;
-width: 100px;
-display: inline;
+
+.card-img {
+    margin-top: 0;
+    margin-bottom: 5px;
+    width: 30px;
+    height: 30px;
 }
-.RefreshButton{
-width:60px;
-font-size: none;
+
+.temperature {
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-right: 10px;
 }
-.RefreshButtonTitle{
-display: none;
+
+.card-button {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(160, 159, 159);
+    border-radius: 100%;
 }
-.Favorites{
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: flex-start;
+
+.button-cross {
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
 }
-.Search{
- width: 100%;
+
+.info-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
-input{
-flex-grow: 2;
+
+.info-line-title {
+    font-weight: 800;
 }
-}                 
+
+.block-weather {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: -35%;
+}
+
+@media screen and (max-width:830px) {
+    body {
+        width: 98%;
+    }
+}
+
+@media screen and (max-width:761px) {
+    .main-root {
+        grid-template-columns: 100%;
+    }
+    header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    main {
+        display: inline;
+        width: 100%;
+    }
+    .favorites {
+        width: 100%;
+    }
+    .all {
+        grid-template-columns: 100%;
+    }
+    .refresh-image {
+        height: 100px;
+        width: 100px;
+        display: inline;
+    }
+    .refresh-button {
+        width: 60px;
+        font-size: none;
+    }
+    .refresh-button-title {
+        display: none;
+    }
+}
+
+@media screen and (max-width:411px) {
+    .favorites {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    body {
+        width: 302px;
+    }
+}

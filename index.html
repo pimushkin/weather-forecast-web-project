@@ -9,540 +9,316 @@
 </head>
 
 <body>
-
-    <main class="MainRoot">
-    <div class="wrapper">
-        <div class="Head">
-
+    <main>
+        <header>
             <h2>Погода здесь</h2>
-            <button class="RefreshButton">
-            <img class="RefreshImage"style="height: 100%;"src="img/refresh.svg"></img>
-            <a class="RefreshButtonTitle">Обновить геолокацию</a></button>
+            <button class="refresh-button">
+                <img class="refresh-image" style="height: 100%;" src="img/refresh.svg"></img>
+                <a class="refresh-button-title">Обновить геолокацию</a>
+            </button>
+        </header>
 
-        </div>
-
-
-        <div class="Main">
-            <div>
-                <h1 style="margin-top: 2%;">Saint Petersburg</h1>
-                <div style="width:100%; display: flex; flex-direction: row; justify-content: space-between;">
+        <div class="main-root">
+            <div class="petersburg">
+                <div>
+                    <h1 style="margin-top: 2%;">Saint petersburg
+                    </h1>
+                </div>
+                <div style="display: flex; flex-direction: row; justify-content: space-between;align-items: center;">
                     <img style="width:100px; height: 100px;" src="img\cloudy.svg">
-                    <a style="font-size: 80px; margin: 0; font-weight: 500;">8°С</a>
+                    <span style="font-size: 80px; margin: 0; font-weight: 500;">8°С</span>
                 </div>
             </div>
 
-            <div class="InfoBlock">
+            <div class="info-block">
                 <ul>
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="margin-right: 2%;" style="font-weight: 800;">Ветер</a>
-                                <a>Moderate breeze, 6.0 m/s, North-northwest</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <div style="font-weight: 800;margin-right: 8px;">Ветер</div>
+                        <div>Moderate breeze, 6.0 m/s, North-northwest</div>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Облачность</a>
-                                <a>Broken clouds</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Облачность</span>
+                        <span>Broken clouds</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Давление</a>
-                                <a>1013 hpa</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Давление</span>
+                        <span>1013 hpa</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Влажность</a>
-                                <a>52 %</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Влажность</span>
+                        <span>52 %</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Координаты</a>
-                                <a>[59.88, 30.42]</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Координаты</span>
+                        <span>[59.88, 30.42]</b>
                     </li>
                 </ul>
-
-                </li>
 
                 </ul>
             </div>
         </div>
 
 
-        <div class="Favorites">
+        <div class="favorites">
             <div>
-                <h2>Избранное</h2>
+                <h2 style="margin-top: 0;">Избранное</h2>
             </div>
-            <div></div>
-            <div class="Search">
-                <input type="search" value="Добавить новый город">
+            <div>
+                <div class="searching">
+                    <input type="search" placeholder="Добавить новый город">
+                    <button class="search-button">
+                        <span>+</span>
+                        </button>
 
-                <div><button style="height:30px; width:30px; background-color:rgb(160, 159, 159); border-radius:100%;">
-                        <a style="color: white; font-weight: 500; font-size: 20px;">+</a>
-                    </button>
-                    
-                </div>
             </div>
+        </div>
 
         </div>
 
 
-        <div class="All">
+        <div class="all">
             <div id="City_Card1">
-                <div class="InfoBlock">
+                <div class="info-block">
+
                     <h3 id="CityName_Card1" style=>Moscow</h3>
-                    <div class="BlockWeather">
-                        <h3 id="Temperature_Card1"
-                            style="font-size: 25px; margin-top: 0; margin-bottom: 5px; margin-right: 10px;">5°С</h3>
-                        <img id="WeatherImage_Card1"
-                            style="margin-top: 0; margin-bottom: 5px; width:30px; height: 30px;" src="img\cloudy.svg">
+                    <div class="block-weather">
+                        <h3 id="Temperature_Card1" class="temperature">5°С</h3>
+                        <img id="WeatherImage_Card1" class="card-img" src="img\cloudy.svg">
                     </div>
-                    <button id="Button_Card1"
-                        style="height:30px; width:30px; background-color:rgb(160, 159, 159); border-radius:100%;">
-                        <a style="color: white; font-weight: 500; font-size: 20px;">×</a>
+
+                    <button id="Button_Card1" class="card-button">
+                        <span class="button-cross">×</span>
                     </button>
 
                 </div>
                 <ul>
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="margin-right: 2%;" style="font-weight: 800;">Ветер</a>
-                                <a>Moderate breeze, 6.0 m/s, North-northwest</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title" style="margin-right: 8px;">Ветер</span>
+                        <span>Moderate breeze, 6.0 m/s, North-northwest</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Облачность</a>
-                                <a>Broken clouds</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Облачность</span>
+                        <span>Broken clouds</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Давление</a>
-                                <a>1013 hpa</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Давление</span>
+                        <span>1013 hpa</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Влажность</a>
-                                <a>52 %</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Влажность</span>
+                        <span>52 %</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Координаты</a>
-                                <a>[59.88, 30.42]</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Координаты</span>
+                        <span>[59.88, 30.42]</b>
                     </li>
-                </ul>
-
-                </li>
-
                 </ul>
             </div>
             <div id="City_Card2">
-                <div class="InfoBlock">
+                <div class="info-block">
                     <h3 id="CityName_Card1" style=>Helsinki</h3>
-                    <div class="BlockWeather">
-                        <h3 id="Temperature_Card1"
-                            style="font-size: 25px; margin-top: 0; margin-bottom: 5px; margin-right: 10px;">5°С</h3>
-                        <img id="WeatherImage_Card1"
-                            style="margin-top: 0; margin-bottom: 5px; width:30px; height: 30px;" src="img\cloudy.svg">
+                    <div class="block-weather">
+                        <h3 id="Temperature_Card1" class="temperature">5°С</h3>
+                        <img id="WeatherImage_Card1" class="card-img" src="img\cloudy.svg">
                     </div>
-                    <button id="Button_Card1"
-                        style="height:30px; width:30px; background-color:rgb(160, 159, 159); border-radius:100%;">
-                        <a style="color: white; font-weight: 500; font-size: 20px;">×</a>
-                    </button>
+                    <button id="Button_Card1" class="card-button">
+                        <span class="button-cross">×</span>
+                        </button>
 
-                </div>
-                <ul>
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="margin-right: 2%;" style="font-weight: 800;">Ветер</a>
-                                <a>Moderate breeze, 6.0 m/s, North-northwest</a>
-                            </div>
-                        </div>
-
+            </div>
+            <ul>
+                <li class="info-line">
+                    <span class="info-line-title" style="margin-right: 8px;">Ветер</span>
+                    <span>Moderate breeze, 6.0 m/s, North-northwest</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Облачность</a>
-                                <a>Broken clouds</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Облачность</span>
+                    <span>Broken clouds</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Давление</a>
-                                <a>1013 hpa</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Давление</span>
+                    <span>1013 hpa</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Влажность</a>
-                                <a>52 %</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Влажность</span>
+                    <span>52 %</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Координаты</a>
-                                <a>[59.88, 30.42]</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Координаты</span>
+                    <span>[59.88, 30.42]</b>
                     </li>
-                </ul>
-
-                </li>
-
                 </ul>
             </div>
             <div id="City_Card3">
-                <div class="InfoBlock">
+                <div class="info-block">
                     <h3 id="CityName_Card1" style=>Moscow</h3>
-                    <div class="BlockWeather">
-                        <h3 id="Temperature_Card1"
-                            style="font-size: 25px; margin-top: 0; margin-bottom: 5px; margin-right: 10px;">5°С</h3>
-                        <img id="WeatherImage_Card1"
-                            style="margin-top: 0; margin-bottom: 5px; width:30px; height: 30px;" src="img\cloudy.svg">
+                    <div class="block-weather">
+                        <h3 id="Temperature_Card1" class="temperature">5°С</h3>
+                        <img id="WeatherImage_Card1" class="card-img" src="img\cloudy.svg">
                     </div>
-                    <button id="Button_Card1"
-                        style="height:30px; width:30px; background-color:rgb(160, 159, 159); border-radius:100%;">
-                        <a style="color: white; font-weight: 500; font-size: 20px;">×</a>
+                    <button id="Button_Card1" class="card-button">
+                        <span class="button-cross">×</span>
                     </button>
 
-                </div>
-                <ul>
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="margin-right: 2%;" style="font-weight: 800;">Ветер</a>
-                                <a>Moderate breeze, 6.0 m/s, North-northwest</a>
-                            </div>
-                        </div>
-
+        </div>
+        <ul>
+            <li class="info-line">
+                <span class="info-line-title" style="margin-right: 8px;">Ветер</span>
+                <span>Moderate breeze, 6.0 m/s, North-northwest</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Облачность</a>
-                                <a>Broken clouds</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Облачность</span>
+                <span>Broken clouds</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Давление</a>
-                                <a>1013 hpa</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Давление</span>
+                <span>1013 hpa</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Влажность</a>
-                                <a>52 %</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Влажность</span>
+                <span>52 %</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Координаты</a>
-                                <a>[59.88, 30.42]</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Координаты</span>
+                <span>[59.88, 30.42]</b>
                     </li>
-                </ul>
-
-                </li>
-
                 </ul>
             </div>
             <div id="City_Card4">
-                <div class="InfoBlock">
+                <div class="info-block">
                     <h3 id="CityName_Card1" style=>Helsinki</h3>
-                    <div class="BlockWeather">
-                        <h3 id="Temperature_Card1"
-                            style="font-size: 25px; margin-top: 0; margin-bottom: 5px; margin-right: 10px;">5°С</h3>
-                        <img id="WeatherImage_Card1"
-                            style="margin-top: 0; margin-bottom: 5px; width:30px; height: 30px;" src="img\cloudy.svg">
+                    <div class="block-weather">
+                        <h3 id="Temperature_Card1" class="temperature">5°С</h3>
+                        <img id="WeatherImage_Card1" class="card-img" src="img\cloudy.svg">
                     </div>
-                    <button id="Button_Card1"
-                        style="height:30px; width:30px; background-color:rgb(160, 159, 159); border-radius:100%;">
-                        <a style="color: white; font-weight: 500; font-size: 20px;">×</a>
-                    </button>
+                    <button id="Button_Card1" class="card-button">
+                        <span class="button-cross">×</span>
+                </button>
 
                 </div>
                 <ul>
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="margin-right: 2%;" style="font-weight: 800;">Ветер</a>
-                                <a>Moderate breeze, 6.0 m/s, North-northwest</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title" style="margin-right: 8px;">Ветер</span>
+                        <span>Moderate breeze, 6.0 m/s, North-northwest</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Облачность</a>
-                                <a>Broken clouds</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Облачность</span>
+                        <span>Broken clouds</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Давление</a>
-                                <a>1013 hpa</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Давление</span>
+                        <span>1013 hpa</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Влажность</a>
-                                <a>52 %</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Влажность</span>
+                        <span>52 %</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Координаты</a>
-                                <a>[59.88, 30.42]</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Координаты</span>
+                        <span>[59.88, 30.42]</b>
                     </li>
-                </ul>
-
-                </li>
-
                 </ul>
             </div>
             <div id="City_Card5">
-                <div class="InfoBlock">
+                <div class="info-block">
                     <h3 id="CityName_Card1" style=>Moscow</h3>
-                    <div class="BlockWeather">
-                        <h3 id="Temperature_Card1"
-                            style="font-size: 25px; margin-top: 0; margin-bottom: 5px; margin-right: 10px;">5°С</h3>
-                        <img id="WeatherImage_Card1"
-                            style="margin-top: 0; margin-bottom: 5px; width:30px; height: 30px;" src="img\cloudy.svg">
+                    <div class="block-weather">
+                        <h3 id="Temperature_Card1" class="temperature">5°С</h3>
+                        <img id="WeatherImage_Card1" class="card-img" src="img\cloudy.svg">
                     </div>
-                    <button id="Button_Card1"
-                        style="height:30px; width:30px; background-color:rgb(160, 159, 159); border-radius:100%;">
-                        <a style="color: white; font-weight: 500; font-size: 20px;">×</a>
-                    </button>
+                    <button id="Button_Card1" class="card-button">
+                        <span class="button-cross">×</span>
+                        </button>
 
-                </div>
-                <ul>
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="margin-right: 2%;" style="font-weight: 800;">Ветер</a>
-                                <a>Moderate breeze, 6.0 m/s, North-northwest</a>
-                            </div>
                         </div>
-
+                        <ul>
+                            <li class="info-line">
+                                <span class="info-line-title" style="margin-right: 8px;">Ветер</span>
+                                <span>Moderate breeze, 6.0 m/s, North-northwest</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Облачность</a>
-                                <a>Broken clouds</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Облачность</span>
+                                <span>Broken clouds</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Давление</a>
-                                <a>1013 hpa</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Давление</span>
+                                <span>1013 hpa</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Влажность</a>
-                                <a>52 %</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Влажность</span>
+                                <span>52 %</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Координаты</a>
-                                <a>[59.88, 30.42]</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Координаты</span>
+                                <span>[59.88, 30.42]</b>
                     </li>
-                </ul>
-
-                </li>
-
                 </ul>
             </div>
             <div id="City_Card6">
-                <div class="InfoBlock">
+                <div class="info-block">
                     <h3 id="CityName_Card1" style=>Helsinki</h3>
-                    <div class="BlockWeather">
-                        <h3 id="Temperature_Card1"
-                            style="font-size: 25px; margin-top: 0; margin-bottom: 5px; margin-right: 10px;">5°С</h3>
-                        <img id="WeatherImage_Card1"
-                            style="margin-top: 0; margin-bottom: 5px; width:30px; height: 30px;" src="img\cloudy.svg">
+                    <div class="block-weather">
+                        <h3 id="Temperature_Card1" class="temperature">5°С</h3>
+                        <img id="WeatherImage_Card1" class="card-img" src="img\cloudy.svg">
                     </div>
-                    <button id="Button_Card1"
-                        style="height:30px; width:30px; background-color:rgb(160, 159, 159); border-radius:100%;">
-                        <a style="color: white; font-weight: 500; font-size: 20px;">×</a>
-                    </button>
+                    <button id="Button_Card1" class="card-button">
+                        <span class="button-cross">×</span>
+                                </button>
 
-                </div>
-                <ul>
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="margin-right: 2%;" style="font-weight: 800;">Ветер</a>
-                                <a>Moderate breeze, 6.0 m/s, North-northwest</a>
-                            </div>
-                        </div>
-
+                                </div>
+                                <ul>
+                                    <li class="info-line">
+                                        <span class="info-line-title" style="margin-right: 8px;">Ветер</span>
+                                        <span>Moderate breeze, 6.0 m/s, North-northwest</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Облачность</a>
-                                <a>Broken clouds</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Облачность</span>
+                                        <span>Broken clouds</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Давление</a>
-                                <a>1013 hpa</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Давление</span>
+                                        <span>1013 hpa</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Влажность</a>
-                                <a>52 %</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Влажность</span>
+                                        <span>52 %</b>
                     </li>
 
-                    <li>
-                        <div class="InfoLine">
-                            <div class="InfoLineText">
-                                <a style="font-weight: 800;">Координаты</a>
-                                <a>[59.88, 30.42]</a>
-                            </div>
-                        </div>
-
+                    <li class="info-line">
+                        <span class="info-line-title">Координаты</span>
+                                        <span>[59.88, 30.42]</b>
                     </li>
-                </ul>
-
-                </li>
-
                 </ul>
             </div>
         </div>
-    </div>
-
-
-    </div>
-
-</main>
+    </main>
 </body>
 
 </html>
