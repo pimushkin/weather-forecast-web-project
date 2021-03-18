@@ -16,7 +16,7 @@ h3 {
     margin-right: 20px;
 }
 
-li {
+.weather-fields li {
     list-style-type: none;
     background-color: rgb(160, 159, 159);
     border-radius: 5px;
@@ -30,7 +30,7 @@ li {
     padding: 8px 10px;
 }
 
-ul {
+.weather-fields {
     margin-top: 2%;
     margin-left: 0;
     padding-left: 0;
