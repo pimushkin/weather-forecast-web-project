@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Lab 1 Pimushkin</title>
+    <title>Weather Forecast</title>
 </head>
 
 <body>
+    <div class="loader" id="main-loader"></div>
     <header>
         <h2>Погода здесь</h2>
         <button class="refresh-button">
@@ -34,37 +35,34 @@
 
                 <li>
                     <span class="info-line-title">Облачность</span>
-                    <span>Broken clouds</b>
-                    </li>
+                    <span>Broken clouds</span>
+                </li>
 
-                    <li>
-                        <span class="info-line-title">Давление</span>
-                    <span>1013 hpa</b>
-                    </li>
+                <li>
+                    <span class="info-line-title">Давление</span>
+                    <span>1013 hpa</span>
+                </li>
 
-                    <li>
-                        <span class="info-line-title">Влажность</span>
-                    <span>52 %</b>
-                    </li>
+                <li>
+                    <span class="info-line-title">Влажность</span>
+                    <span>52 %</span>
+                </li>
 
-                    <li>
-                        <span class="info-line-title">Координаты</span>
-                    <span>[59.88, 30.42]</b>
-                    </li>
-                </ul>
+                <li>
+                    <span class="info-line-title">Координаты</span>
+                    <span>[59.88, 30.42]</span>
+                </li>
+            </ul>
         </section>
         <section class="favorites">
             <h2>Избранное</h2>
-            <div class="searching">
-                <input type="search" placeholder="Добавить новый город">
-                <button class="search-button">
-                    <span>+</span>
-                    </button>
-                    </div>
+            <form action="" id="searching" class="search-form">
+                <input placeholder="Добавить новый город" class="search-input" id="city-input" type="text">
+                <button class="search-button" type="submit">+</button>
+            </form>
         </section>
-        <section class="all">
-            <div id="City_Card1">
-
+        <section id="card-list" class="all">
+            <!-- <div id="City_Card1">
                 <div class="info-block">
                     <div class="info-block-help-div">
                         <h3 id="CityName_Card1">Moscow</h3>
@@ -81,27 +79,27 @@
                 <ul class="weather-fields">
                     <li>
                         <span class="info-line-title">Ветер</span>
-                        <span>Moderate breeze, 6.0 m/s, North-northwest</b>
+                        <span>Moderate breeze, 6.0 m/s, North-northwest</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Облачность</span>
-                        <span>Broken clouds</b>
+                        <span>Broken clouds</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Давление</span>
-                        <span>1013 hpa</b>
+                        <span>1013 hpa</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Влажность</span>
-                        <span>52 %</b>
+                        <span>52 %</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Координаты</span>
-                        <span>[59.88, 30.42]</b>
+                        <span>[59.88, 30.42]</span>
                     </li>
                 </ul>
             </div>
@@ -119,33 +117,33 @@
 
                     <button id="Button_Card1" class="card-button">
                         <span class="button-cross">×</span>
-                        </button>
+                    </button>
 
-            </div>
-            <ul class="weather-fields">
-                <li>
-                    <span class="info-line-title">Ветер</span>
-                    <span>Moderate breeze, 6.0 m/s, North-northwest</b>
+                </div>
+                <ul class="weather-fields">
+                    <li>
+                        <span class="info-line-title">Ветер</span>
+                        <span></span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Облачность</span>
-                    <span>Broken clouds</b>
+                        <span>Broken clouds</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Давление</span>
-                    <span>1013 hpa</b>
+                        <span>1013 hpa</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Влажность</span>
-                    <span>52 %</b>
+                        <span>52 %</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Координаты</span>
-                    <span>[59.88, 30.42]</b>
+                        <span>[59.88, 30.42]</span>
                     </li>
                 </ul>
 
@@ -164,31 +162,31 @@
                         <span class="button-cross">×</span>
                     </button>
 
-                    </div>
-                    <ul class="weather-fields">
-                        <li>
-                            <span class="info-line-title">Ветер</span>
-                            <span>Moderate breeze, 6.0 m/s, North-northwest</b>
+                </div>
+                <ul class="weather-fields">
+                    <li>
+                        <span class="info-line-title">Ветер</span>
+                        <span>Moderate breeze, 6.0 m/s, North-northwest</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Облачность</span>
-                            <span>Broken clouds</b>
+                        <span>Broken clouds</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Давление</span>
-                            <span>1013 hpa</b>
+                        <span>1013 hpa</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Влажность</span>
-                            <span>52 %</b>
+                        <span>52 %</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Координаты</span>
-                            <span>[59.88, 30.42]</b>
+                        <span>[59.88, 30.42]</span>
                     </li>
                 </ul>
 
@@ -204,33 +202,33 @@
                     </div>
                     <button id="Button_Card1" class="card-button">
                         <span class="button-cross">×</span>
-                            </button>
+                    </button>
 
-                            </div>
-                            <ul class="weather-fields">
-                                <li>
-                                    <span class="info-line-title">Ветер</span>
-                                    <span>Moderate breeze, 6.0 m/s, North-northwest</b>
+                </div>
+                <ul class="weather-fields">
+                    <li>
+                        <span class="info-line-title">Ветер</span>
+                        <span>Moderate breeze, 6.0 m/s, North-northwest</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Облачность</span>
-                                    <span>Broken clouds</b>
+                        <span>Broken clouds</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Давление</span>
-                                    <span>1013 hpa</b>
+                        <span>1013 hpa</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Влажность</span>
-                                    <span>52 %</b>
+                        <span>52 %</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Координаты</span>
-                                    <span>[59.88, 30.42]</b>
+                        <span>[59.88, 30.42]</span>
                     </li>
                 </ul>
 
@@ -246,33 +244,33 @@
                     </div>
                     <button id="Button_Card1" class="card-button">
                         <span class="button-cross">×</span>
-                                    </button>
+                    </button>
 
-                                    </div>
-                                    <ul class="weather-fields">
-                                        <li>
-                                            <span class="info-line-title">Ветер</span>
-                                            <span>Moderate breeze, 6.0 m/s, North-northwest</b>
+                </div>
+                <ul class="weather-fields">
+                    <li>
+                        <span class="info-line-title">Ветер</span>
+                        <span>Moderate breeze, 6.0 m/s, North-northwest</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Облачность</span>
-                                            <span>Broken clouds</b>
+                        <span>Broken clouds</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Давление</span>
-                                            <span>1013 hpa</b>
+                        <span>1013 hpa</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Влажность</span>
-                                            <span>52 %</b>
+                        <span>52 %</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Координаты</span>
-                                            <span>[59.88, 30.42]</b>
+                        <span>[59.88, 30.42]</span>
                     </li>
                 </ul>
 
@@ -288,39 +286,84 @@
                     </div>
                     <button id="Button_Card1" class="card-button">
                         <span class="button-cross">×</span>
-                                            </button>
+                    </button>
 
-                                            </div>
-                                            <ul class="weather-fields">
-                                                <li>
-                                                    <span class="info-line-title">Ветер</span>
-                                                    <span>Moderate breeze, 6.0 m/s, North-northwest</b>
+                </div>
+                <ul class="weather-fields">
+                    <li>
+                        <span class="info-line-title">Ветер</span>
+                        <span>Moderate breeze, 6.0 m/s, North-northwest</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Облачность</span>
-                                                    <span>Broken clouds</b>
+                        <span>Broken clouds</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Давление</span>
-                                                    <span>1013 hpa</b>
+                        <span>1013 hpa</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Влажность</span>
-                                                    <span>52 %</b>
+                        <span>52 %</span>
                     </li>
 
                     <li>
                         <span class="info-line-title">Координаты</span>
-                                                    <span>[59.88, 30.42]</b>
+                        <span>[59.88, 30.42]</span>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </section>
+        <template id="card-template">
+                <div id="card">
+                    <div class="info-block">
+                        <div class="info-block-help-div">
+                            <h3 id="city-name"></h3>
+                            <div class="block-weather">
+                                <div id="temp" class="temperature">5°С</div>
+                                <img id="icon" class="card-img">
+                            </div>
+                        </div>
+                        <button id="delete-button" class="card-button">
+                            <span class="button-cross">×</span>
+                        </button>
+            
+                    </div>
+                    <ul class="weather-fields">
+                        <li>
+                            <span class="info-line-title">Ветер</span>
+                            <span id="wind"></span>
+                        </li>
+            
+                        <li>
+                            <span class="info-line-title">Облачность</span>
+                            <span id="cloud-cover"></span>
+                        </li>
+            
+                        <li>
+                            <span class="info-line-title">Давление</span>
+                            <span id="pressure"></span>
+                        </li>
+            
+                        <li>
+                            <span class="info-line-title">Влажность</span>
+                            <span id="humidity"></span>
+                        </li>
+            
+                        <li>
+                            <span class="info-line-title">Координаты</span>
+                            <span id="coordinates"></span>
+                        </li>
+                    </ul>
+                </div>
+        </template>
     </main>
-
+    <script src="js/loader.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
