@@ -1,6 +1,6 @@
 const api = {
     key: "660e6272991aa4e57e4ede8f699f6ec3",
-    baseUrl: "http://api.openweathermap.org/data/2.5/"
+    baseUrl: "https://api.openweathermap.org/data/2.5/"
 }
 
 function Weather(json) {
