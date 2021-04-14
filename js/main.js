@@ -39,50 +39,32 @@ async function setQuery(evt) {
     hideLoader();
 }
 
+function checkResponse(response) {
+    if (response.status >= 200 && response.status < 300) {
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.indexOf("application/json") !== -1) {
+            return response;
+        } else {
+            let error = new Error('Invalid response from the server.');
+            throw error
+        }
+    } else {
+        let error = new Error('No data was found for this city.');
+        throw error
+    }
+}
+
 async function getWeatherJsonByCityNameAsync(query) {
-    return await fetch(`${api.baseUrl}weather?q=${query}&units=metric&APPID=${api.key}`)
-        .then((res) => {
-            if (res.status >= 200 && res.status < 300) {
-                return res;
-            } else {
-                let error = new Error('No data was found for this city.');
-                throw error
-            }
-        })
-        .then((res) => {
-            const contentType = res.headers.get("content-type");
-            if (contentType && contentType.indexOf("application/json") !== -1) {
-                return res;
-            } else {
-                let error = new Error('Invalid response from the server.');
-                throw error
-            }
-        })
-        .then((res) => res.json());
+    const response = await fetch(`${api.baseUrl}weather?q=${query}&units=metric&APPID=${api.key}`);
+    checkResponse(response);
+    return response.json();
 }
 
 async function getWeatherJsonByCityIdAsync(id) {
-    return await fetch(`${api.baseUrl}weather?id=${id}&units=metric&APPID=${api.key}`)
-        .then((res) => {
-            if (res.status >= 200 && res.status < 300) {
-                return res;
-            } else {
-                let error = new Error('No data was found for this city.');
-                throw error
-            }
-        })
-        .then((res) => {
-            const contentType = res.headers.get("content-type");
-            if (contentType && contentType.indexOf("application/json") !== -1) {
-                return res;
-            } else {
-                let error = new Error('Invalid response from the server.');
-                throw error
-            }
-        })
-        .then((res) => {
-            return res.json()
-        });
+
+    const response = await fetch(`${api.baseUrl}weather?id=${id}&units=metric&APPID=${api.key}`);
+    checkResponse(response);
+    return response.json();
 }
 
 function getCompletedCard(weather) {
