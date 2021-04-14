@@ -3,17 +3,19 @@ const api = {
     baseUrl: "https://api.openweathermap.org/data/2.5/"
 }
 
-function Weather(json) {
-    this.speed = json.wind.speed;
-    this.cloudCover = json.weather[0].description;
-    this.pressure = json.main.pressure;
-    this.humidity = json.main.humidity;
-    this.lon = json.coord.lon;
-    this.lat = json.coord.lat;
-    this.temperature = json.main.temp;
-    this.iconUrl = json.weather[0]['icon'];
-    this.cityName = json.name;
-    this.id = json.id;
+class Weather {
+    constructor(json) {
+        this.speed = json.wind.speed;
+        this.cloudCover = json.weather[0].description;
+        this.pressure = json.main.pressure;
+        this.humidity = json.main.humidity;
+        this.lon = json.coord.lon;
+        this.lat = json.coord.lat;
+        this.temperature = json.main.temp;
+        this.iconUrl = json.weather[0]['icon'];
+        this.cityName = json.name;
+        this.id = json.id;
+    }
 }
 
 const searchBox = document.getElementById('searching');
