@@ -21,15 +21,14 @@ searchBox.addEventListener('submit', setQuery);
 
 async function setQuery(evt) {
     evt.preventDefault();
+    showLoader();
     try {
         const cityName = searchBox.querySelector('#city-input').value;
         if (isRequestRepeatedInLocalStorage(cityName)) {
             let error = new Error('The city has already been added.');
             throw error;
         }
-        showLoader();
         const json = await getWeatherJsonByCityNameAsync(cityName);
-        hideLoader();
         const weather = new Weather(json);
         addCityToLocaleStorageArray(cityName, weather.id);
         const completedCard = getCompletedCard(weather);
@@ -37,6 +36,7 @@ async function setQuery(evt) {
     } catch (error) {
         window.alert(error);
     }
+    hideLoader();
 }
 
 async function getWeatherJsonByCityNameAsync(query) {
@@ -116,15 +116,28 @@ function getCompletedCard(weather) {
     return template;
 }
 
+function removeIDsFromTemplate(template) {
+    template.removeAttribute('id');
+    template.querySelector('#wind').removeAttribute('id');
+    template.querySelector('#cloud-cover').removeAttribute('id');
+    template.querySelector('#pressure').removeAttribute('id');
+    template.querySelector('#humidity').removeAttribute('id');
+    template.querySelector('#coordinates').removeAttribute('id');
+    template.querySelector('#temp').removeAttribute('id');
+    template.querySelector('#icon').removeAttribute('id');
+    template.querySelector('#city-name').removeAttribute('id');
+}
+
 function loadCardToTopOfList(completedCard, cityId) {
     const listOfCities = document.getElementById('card-list');
     const cloneOfTemplate = completedCard.content.getElementById('card').cloneNode(true);
-
+    removeIDsFromTemplate(cloneOfTemplate);
     listOfCities.insertBefore(cloneOfTemplate, listOfCities.firstChild);
     cloneOfTemplate.querySelector('#delete-button').onclick = () => {
         listOfCities.removeChild(cloneOfTemplate);
         removeCitiesByIdFromLocalStorage(cityId);
     };
+    cloneOfTemplate.querySelector('#delete-button').removeAttribute('id');
 }
 
 function loadCitiesFromLocalStorage() {

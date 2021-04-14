@@ -1,5 +1,5 @@
 function showLoader() {
-    document.getElementById('main-loader').style.display = 'block';
+    document.getElementById('main-loader').style.display = 'flex';
 }
 
 function hideLoader() {
