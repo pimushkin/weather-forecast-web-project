@@ -11,48 +11,48 @@
 <body>
     <header>
         <h2>Погода здесь</h2>
-        <button class="refresh-button">
+        <button class="refresh-button" id="geolocation-button">
             <img class="refresh-image" src="img/refresh.svg"></img>
             <a class="refresh-button-title">Обновить геолокацию</a></button>
     </header>
     <main>
-        <section class="main-root">
-            <div class="petersburg">
-                <h1>Saint petersburg</h1>
+        <div class="main-root" id='city-by-coordinates'>
+            <div class="main-city">
+                <h1 id='main-city-name'></h1>
                 <div class="main-weather">
-                    <img class="main-img" src="img\cloudy.svg">
-                    <span>8°С</span>
+                    <img class="main-img" id='main-city-icon'>
+                    <span id='main-city-temp'></span>
                 </div>
             </div>
 
 
             <ul class="weather-fields">
                 <li>
-                    <div class="info-line-title">Ветер</div>
-                    <div>Moderate breeze, 6.0 m/s, North-northwest</div>
+                    <span class="info-line-title">Ветер</span>
+                    <span id='main-city-wind'></span>
                 </li>
 
                 <li>
                     <span class="info-line-title">Облачность</span>
-                    <span>Broken clouds</span>
+                    <span id='main-city-cloud-cover'></span>
                 </li>
 
                 <li>
                     <span class="info-line-title">Давление</span>
-                    <span>1013 hpa</span>
+                    <span id='main-city-pressure'></span>
                 </li>
 
                 <li>
                     <span class="info-line-title">Влажность</span>
-                    <span>52 %</span>
+                    <span id='main-city-humidity'></span>
                 </li>
 
                 <li>
                     <span class="info-line-title">Координаты</span>
-                    <span>[59.88, 30.42]</span>
+                    <span id='main-city-coordinates'></span>
                 </li>
             </ul>
-        </section>
+        </div>
         <section class="favorites">
             <h2>Избранное</h2>
             <form action="" id="searching" class="search-form">
@@ -68,7 +68,7 @@
                     <div class="info-block-help-div">
                         <h3 id="city-name"></h3>
                         <div class="block-weather">
-                            <div id="temp" class="temperature">5°С</div>
+                            <span id="temp" class="temperature"></span>
                             <img id="icon" class="card-img">
                         </div>
                     </div>
