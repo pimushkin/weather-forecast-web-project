@@ -1,8 +1,3 @@
-const api = {
-    key: "660e6272991aa4e57e4ede8f699f6ec3",
-    baseUrl: "https://api.openweathermap.org/data/2.5/"
-}
-
 class Weather {
     constructor(speed, cloudCover, pressure, humidity, lon, lat, temp, iconUrl, name, id) {
         this.speed = speed;
@@ -23,43 +18,46 @@ function loadCardToTopOfList(completedCard, cityId) {
     const cloneOfTemplate = completedCard.content.getElementById('card').cloneNode(true);
     removeIDsFromTemplate(cloneOfTemplate);
     listOfCities.insertBefore(cloneOfTemplate, listOfCities.firstChild);
-    cloneOfTemplate.querySelector('#delete-button').onclick = () => {
-        listOfCities.removeChild(cloneOfTemplate);
-        removeCitiesByIdFromLocalStorage(cityId);
+    cloneOfTemplate.querySelector('#delete-button').onclick = async () => {
+        showLoader();
+        try {
+            await deleteWeatherAsync(cityId);
+            listOfCities.removeChild(cloneOfTemplate);
+        } catch (error) {
+            window.alert(error);
+        }
+        finally {
+            hideLoader();
+        }
     };
     cloneOfTemplate.querySelector('#delete-button').removeAttribute('id');
 }
 
-function initLoad() {
+async function initLoad() {
     showLoader();
-    initLocalStorage();
-    const cityIds = getCityIdsFromLocalStorage();
-    const promises = cityIds.map(id => new Promise(resolve => {
-        const response = getWeatherJsonByCityIdAsync(id);
+    const promise = new Promise(resolve => {
+        const response = getAllWeatherForecastsJsonAsync();
         resolve(response);
-    }).catch(function () {
-        removeCitiesByIdFromLocalStorage(id);
-    }));
-
-    Promise.all(promises).then(results => {
-        results.forEach(city => {
+    });
+    function throwError(error) {
+        window.alert(error);
+        hideLoader();
+    };
+    promise.then(value => {
+        value.weatherConditions.forEach(city => {
             const weather = new Weather(city.wind.speed, city.weather[0].description,
                 city.main.pressure, city.main.humidity, city.coord.lon, city.coord.lat,
                 city.main.temp, city.weather[0]['icon'], city.name, city.id);
             const completedCard = getCompletedCard(weather);
             loadCardToTopOfList(completedCard, weather.id);
         });
-    });
+    }, error => throwError(error));
     if (navigator.geolocation) {
         function fillMainCityByJson(value) {
             const weather = new Weather(value.wind.speed, value.weather[0].description,
                 value.main.pressure, value.main.humidity, value.coord.lon, value.coord.lat,
                 value.main.temp, value.weather[0]['icon'], value.name, value.id);
             fillMainCity(weather);
-            hideLoader();
-        };
-        function throwError(error) {
-            window.alert(error);
             hideLoader();
         };
         try {
@@ -73,7 +71,7 @@ function initLoad() {
                 promise.then(value => fillMainCityByJson(value), error => throwError(error));
             }, async function () {
                 const promise = new Promise(resolve => {
-                    const response = getWeatherJsonByCityIdAsync(2643743);
+                    const response = getDefaultWeatherJsonAsync();
                     resolve(response);
                 });
                 promise.then(value => fillMainCityByJson(value), error => throwError(error));
@@ -89,15 +87,10 @@ async function setQuery(evt) {
     showLoader();
     try {
         const cityName = searchBox.querySelector('#city-input').value;
-        if (isRequestRepeatedInLocalStorage(cityName)) {
-            let error = new Error('The city has already been added.');
-            throw error;
-        }
         const city = await getWeatherJsonByCityNameAsync(cityName);
         const weather = new Weather(city.wind.speed, city.weather[0].description,
             city.main.pressure, city.main.humidity, city.coord.lon, city.coord.lat,
             city.main.temp, city.weather[0]['icon'], city.name, city.id);
-        addCityToLocaleStorageArray(cityName, weather.id);
         const completedCard = getCompletedCard(weather);
         loadCardToTopOfList(completedCard, weather.id);
         hideLoader();
@@ -120,18 +113,18 @@ async function setGeolocation(evt) {
                     city.main.pressure, city.main.humidity, city.coord.lon, city.coord.lat,
                     city.main.temp, city.weather[0]['icon'], city.name, city.id);
                 fillMainCity(weather);
-                hideLoader();
             }, async function () {
-                const city = await getWeatherJsonByCityIdAsync(2643743);
+                const city = await getDefaultWeatherJsonAsync();
                 const weather = new Weather(city.wind.speed, city.weather[0].description,
                     city.main.pressure, city.main.humidity, city.coord.lon, city.coord.lat,
                     city.main.temp, city.weather[0]['icon'], city.name, city.id);
                 fillMainCity(weather);
-                hideLoader();
             });
 
         } catch (error) {
             window.alert(error);
+        }
+        finally {
             hideLoader();
         }
     }
