@@ -16,20 +16,14 @@ async function checkResponse(response) {
     }
 }
 
-async function getWeatherJsonByCityNameAsync(query) {
-    const response = await fetch(`${apiUrl}/city-by-name?query=${query}`);
-    await checkResponse(response);
-    return response.json();
-}
-
-async function getWeatherJsonByCoordinatesAsync(lat, lon) {
-    const response = await fetch(`${apiUrl}/coordinates?longitude=${lon}&latitude=${lat}`);
-    await checkResponse(response);
-    return response.json();
-}
-
-async function getDefaultWeatherJsonAsync() {
-    const response = await fetch(`${apiUrl}/default`);
+async function getWeatherJsonByCityNameAsync(cityName) {
+    const response = await fetch(`${apiUrl}/city`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ query: String(cityName) })
+    });
     await checkResponse(response);
     return response.json();
 }
@@ -42,6 +36,12 @@ async function getWeatherJsonByCoordinatesAsync(lat, lon) {
 
 async function getAllWeatherForecastsJsonAsync() {
     const response = await fetch(`${apiUrl}/all`);
+    await checkResponse(response);
+    return response.json();
+}
+
+async function getDefaultWeatherJsonAsync() {
+    const response = await fetch(apiUrl);
     await checkResponse(response);
     return response.json();
 }
